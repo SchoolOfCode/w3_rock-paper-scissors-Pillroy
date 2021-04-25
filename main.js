@@ -67,26 +67,52 @@ function generateMove() {
     }
 }
 
-playerMove = prompt("Name your move: rock, paper or scissors");
+// playerMove = prompt("Name your move: rock, paper or scissors");
 
-generateMove();
+// generateMove();
 
-result = getWinner(playerMove, computerMove);
+// result = getWinner(playerMove, computerMove);
 
-alert(result);
+// alert(result);
 
 
 // Task 5
+
+// while(true) {
+//     playerMove = prompt("Name your move: rock, paper or scissors");
+//     generateMove();
+//     result = getWinner(playerMove, computerMove);
+//     alert(result);
+//     let playAgain = window.confirm("Play Again?");
+//     if (playAgain !== true) {
+//         break;
+//     }
+// }
+
+// Task 6
+
+let numberOfGames = 0;
+let wins = 0;
+let draws = 0;
+let losses = 0;
+
 
 while(true) {
     playerMove = prompt("Name your move: rock, paper or scissors");
     generateMove();
     result = getWinner(playerMove, computerMove);
     alert(result);
+    numberOfGames++;
+    if (result === 0) {
+        draws++;
+    } else if (result === 1) {
+        wins++;
+    } else if (result === -1) {
+        losses++;
+    }
+    alert(`Games Played: ${numberOfGames}\nWins: ${wins}\nDraws: ${draws}\nLosses: ${losses}`);
     let playAgain = window.confirm("Play Again?");
     if (playAgain !== true) {
         break;
     }
 }
-
-// Task 6
