@@ -97,11 +97,55 @@ let draws = 0;
 let losses = 0;
 
 
-while(true) {
-    playerMove = prompt("Name your move: rock, paper or scissors");
+// while(true) {
+//     playerMove = prompt("Name your move: rock, paper or scissors");
+//     generateMove();
+//     result = getWinner(playerMove, computerMove);
+//     alert(result);
+//     numberOfGames++;
+//     if (result === 0) {
+//         draws++;
+//     } else if (result === 1) {
+//         wins++;
+//     } else if (result === -1) {
+//         losses++;
+//     }
+//     alert(`Games Played: ${numberOfGames}\nWins: ${wins}\nDraws: ${draws}\nLosses: ${losses}`);
+//     let playAgain = window.confirm("Play Again?");
+//     if (playAgain !== true) {
+//         break;
+//     }
+// }
+
+// Task 7
+
+let button = document.querySelectorAll("button").addEventListener("click", playGame);
+// let rockChoice = document.querySelector("#rock");
+// let paperChoice = document.querySelector("#paper");
+// let scissorsChoice = document.querySelector("#scissors");
+
+// button.addEventListener("click", playGame);
+// rockChoice.addEventListener("click", chooseRock);
+// paperChoice.addEventListener("click", choosePaper);
+// scissorsChoice.addEventListener("click", chooseScissors);
+
+
+// function chooseRock() {
+//     playerMove = "rock"
+// }
+
+// function choosePaper() {
+//     playerMove = "paper"
+// }
+
+// function chooseScissors() {
+//     playerMove = "scissors"
+// }
+
+function playGame() {
     generateMove();
     result = getWinner(playerMove, computerMove);
-    alert(result);
+    console.log(result);
     numberOfGames++;
     if (result === 0) {
         draws++;
@@ -110,9 +154,8 @@ while(true) {
     } else if (result === -1) {
         losses++;
     }
-    alert(`Games Played: ${numberOfGames}\nWins: ${wins}\nDraws: ${draws}\nLosses: ${losses}`);
-    let playAgain = window.confirm("Play Again?");
-    if (playAgain !== true) {
-        break;
-    }
+    console.log(`Games Played: ${numberOfGames}\nWins: ${wins}\nDraws: ${draws}\nLosses: ${losses}`);
+    // let playAgain = window.confirm("Play Again?");
+    // if (playAgain !== true) {
+    //     break;
 }
