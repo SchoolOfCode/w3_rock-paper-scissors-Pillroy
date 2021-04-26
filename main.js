@@ -192,3 +192,16 @@ paperChoice.addEventListener("click", choosePaper);
 paperChoice.addEventListener("click", playGame);
 scissorsChoice.addEventListener("click", chooseScissors);
 scissorsChoice.addEventListener("click", playGame);
+
+// Task 8
+
+let submitName = document.querySelector("#enter-name");
+let nameEntered = document.querySelector("input");
+let userName = document.createElement("H2");
+
+function displayName () {
+    userName.innerHTML = nameEntered.innerText;
+    document.getElementById("#scores").appendChild(nameEntered);
+}
+
+submitName.addEventListener("click", displayName);

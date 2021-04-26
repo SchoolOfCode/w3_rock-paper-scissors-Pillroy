@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font: 300 20px/1.5 Montserrat, sans-serif;
+    background-color: 	#FFFFA7;
 }
 
 h1, h2 {
@@ -9,14 +10,42 @@ h1, h2 {
 }
 
 section {
-    display: block;
+    display: flex;
+    margin: auto;
+}
+
+#section-name {
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    margin: auto;
+}
+
+input {
     margin: auto;
 }
 
 button {
     display: block;
-    margin: auto;
     margin-top: 10px;
+}
+
+#rock {
+    margin-left: auto;
+}
+
+#paper {
+    margin: auto;
+}
+
+#scissors {
+    margin-right: auto;
 }
 
 table {
