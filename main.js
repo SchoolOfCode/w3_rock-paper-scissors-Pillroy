@@ -119,43 +119,76 @@ let losses = 0;
 
 // Task 7
 
-let button = document.querySelectorAll("button").addEventListener("click", playGame);
-// let rockChoice = document.querySelector("#rock");
-// let paperChoice = document.querySelector("#paper");
-// let scissorsChoice = document.querySelector("#scissors");
+// let button = document.querySelectorAll("button");
+// querySelectorAll wasn't working for me so had to come up with longer solution
 
-// button.addEventListener("click", playGame);
-// rockChoice.addEventListener("click", chooseRock);
-// paperChoice.addEventListener("click", choosePaper);
-// scissorsChoice.addEventListener("click", chooseScissors);
+let rockChoice = document.querySelector("#rock");
+let paperChoice = document.querySelector("#paper");
+let scissorsChoice = document.querySelector("#scissors");
 
+let numberOfGamesSel = document.querySelector("#games-played");
+let winsSel = document.querySelector("#wins");
+let drawsSel = document.querySelector("#draws");
+let lossesSel = document.querySelector("#losses");
+let overlay = document.querySelector("#overlay");
 
-// function chooseRock() {
-//     playerMove = "rock"
-// }
+let playAgainHeading = document.createElement("H2");
+let yesButton = document.createElement("BUTTON");
+let noButton = document.createElement("BUTTON");
 
-// function choosePaper() {
-//     playerMove = "paper"
-// }
+function chooseRock() {
+    playerMove = "rock"
+}
 
-// function chooseScissors() {
-//     playerMove = "scissors"
-// }
+function choosePaper() {
+    playerMove = "paper"
+}
+
+function chooseScissors() {
+    playerMove = "scissors"
+}
+
+function playAgainOverlay() {
+    document.getElementById("#overlay").style.visibility = 'visible';
+    playAgainHeading.innerHTML = "Play Again?";
+    document.getElementById("#overlay").appendChild(playAgainHeading);
+    yesButton.innerText = "Yes";
+    document.getElementById("#overlay").appendChild(yesButton);
+    noButton.innerText = "No";
+    document.getElementById("#overlay").appendChild(noButton);
+}
+
+// Couldn't get the playAgainOverlay() function to work... error messages reference null values...
 
 function playGame() {
     generateMove();
     result = getWinner(playerMove, computerMove);
     console.log(result);
     numberOfGames++;
+    numberOfGamesSel.innerHTML = numberOfGames;
     if (result === 0) {
         draws++;
+        drawsSel.innerHTML = draws
     } else if (result === 1) {
         wins++;
+        winsSel.innerHTML = wins
     } else if (result === -1) {
         losses++;
+        lossesSel.innerHTML = losses
     }
-    console.log(`Games Played: ${numberOfGames}\nWins: ${wins}\nDraws: ${draws}\nLosses: ${losses}`);
+    playAgainOverlay();
+    // console.log(`Games Played: ${numberOfGames}\nWins: ${wins}\nDraws: ${draws}\nLosses: ${losses}`);
     // let playAgain = window.confirm("Play Again?");
     // if (playAgain !== true) {
     //     break;
 }
+
+// button.addEventListener("click", playGame);
+
+
+rockChoice.addEventListener("click", chooseRock);
+rockChoice.addEventListener("click", playGame);
+paperChoice.addEventListener("click", choosePaper);
+paperChoice.addEventListener("click", playGame);
+scissorsChoice.addEventListener("click", chooseScissors);
+scissorsChoice.addEventListener("click", playGame);

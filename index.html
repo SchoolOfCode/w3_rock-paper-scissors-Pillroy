@@ -7,10 +7,28 @@
   </head>
   <body>
     <h1>Rock, Paper, Scissors: Choose Below</h1>
-    <div>
+    <section>
       <button id="rock">Rock</button>
       <button id="paper">Paper</button>
       <button id="scissors">Scissors</button>
+    </section>
+    <section id="scores">
+      <table>
+        <thead>
+          <th>Games Played</th>
+          <th>Wins</th>
+          <th>Draws</th>
+          <th>Losses</th>
+        </thead>
+        <tfoot>
+          <td id="games-played">0</td>
+          <td id="wins">0</td>
+          <td id="draws">0</td>
+          <td id="losses">0</td>
+        </tfoot>
+      </table>
+    </section>
+    <div id="overlay" style="visibility: hidden">
     </div>
     <script type="text/javascript" src="main.js"></script>
   </body>
