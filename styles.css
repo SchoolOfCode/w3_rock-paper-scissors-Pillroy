@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font: 300 20px/1.5 Montserrat, sans-serif;
+    background-color: 	#FFFFA7;
+}
+
+h1, h2 {
+    text-align: center;
+    font: small-caps 500 48px/1.2 Montserrat, sans-serif;
+}
+
+section {
+    display: flex;
+    margin: auto;
+}
+
+#section-name {
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    margin: auto;
+}
+
+input {
+    margin: auto;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+}
+
+#rock {
+    margin-left: auto;
+}
+
+#paper {
+    margin: auto;
+}
+
+#scissors {
+    margin-right: auto;
+}
+
+table {
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    border: 2px solid #404040;
+}
+
+th, td {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #404040;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #404040;
+}
